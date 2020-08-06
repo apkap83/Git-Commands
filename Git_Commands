@@ -1,0 +1,126 @@
+git init
+
+# Local Config (within git repository)
+git config --local user.name "Apostolos"
+git config --local user.email "ap.kapetanios@gmail.com"
+
+# Global Config
+git config --global user.name "Apostolos"
+git config --global user.email "ap.kapetanios@gmail.com"
+
+# Proxy Configuration using my account
+git config --global http.sslVerify false;
+git config --global https.sslVerify false;
+git config --global http.proxy http://ap.kapetanios:weWE33**@10.0.1.28:8080;
+git config --global https.proxy https://ap.kapetanios:weWE33**@10.0.1.28:8080;
+
+
+# This may sound a bit confusing but to understand it, you have to understand that there is 
+a # difference between a remote branch, and a branch that exists in a remote repository. 
+Remote # branches are local branches that map to branches of the remote repository. 
+git fetch
+
+# This will automatically get rid of remote branches that no longer exist on the remote.
+git fetch --prune
+
+
+will show you an updated list of branches that really exist on the remote: And those you can delete using 
+git branch -r
+
+# graph Alias
+alias graph="git log --all --decorate --oneline --graph"
+
+# Creates new remote repository
+git remote add origin ap.kapetanios@gmail.com:apkap83/SpectraWS
+
+# Sets the new remote
+git remote add origin https://github.com/apkap83/SpectraWS
+
+
+git add S1
+git commit -m "create s1"
+cp S1 S2
+git add S2
+git commit -m "create s2"
+
+
+git status
+git branch
+git branch SDN
+git checkout SDN
+git commit -am "SDN for S1"
+git diff master..SDN
+
+git merge SDN
+git branch --merged
+
+git branch -d SDN
+
+git merge auth
+
+git checkout -b dev == git branch dev; git checkout
+
+git merge --abort
+
+git stash # temporary save
+
+git stash list 
+
+git stash list -p
+
+git stash apply stash@{1}
+
+git stash save "add yellow vlan"
+
+git rm -r --cached .
+
+===============================
+Git Remote
+===============================
+
+git clone https://github.com/apkap83/netauto.git
+
+git remote
+
+git remote -v
+
+git status
+
+graph
+
+git fetch origin // update local repo from origin
+
+git merge origin/master
+
+git pull // combines git fetch & git merge into a single command
+
+// Make Local changes and then...
+
+git commit -am "New mgmt IP for S1"
+
+graph
+
+git push origin master
+
+
+// Fork another Repo Using the Web interface and then...
+git clone https://github.com/apkap83/freeCodeCamp.git
+
+
+// Add also Git Remote
+git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+
+$ git remote -v
+origin	        https://github.com/apkap83/freeCodeCamp.git (fetch)
+origin	        https://github.com/apkap83/freeCodeCamp.git (push)
+upstream	https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+upstream	https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+
+// If you want to remove a remote repo
+git remote remove <remote name> e.g. upstream
+
+git fetch upstream
+
+--------------
+git branch -a // See local and remote branches
+git branch -r // See remote branches only
