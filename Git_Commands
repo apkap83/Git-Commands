@@ -11,8 +11,8 @@ git config --global user.email "ap.kapetanios@gmail.com"
 # Proxy Configuration using my account
 git config --global http.sslVerify false;
 git config --global https.sslVerify false;
-git config --global http.proxy http://ap.kapetanios:weWE33**@10.0.1.28:8080;
-git config --global https.proxy https://ap.kapetanios:weWE33**@10.0.1.28:8080;
+git config --global http.proxy http://<Your User Name>:<Your Password>@10.0.1.28:8080;
+git config --global https.proxy https://<Your User Name>:<Your Password>@10.0.1.28:8080;
 
 
 # This may sound a bit confusing but to understand it, you have to understand that there is 
