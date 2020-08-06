@@ -14,6 +14,8 @@ git config --global https.sslVerify false;
 git config --global http.proxy http://<Your User Name>:<Your Password>@10.0.1.28:8080;
 git config --global https.proxy https://<Your User Name>:<Your Password>@10.0.1.28:8080;
 
+# Show Configuration
+git config --list --show-origin
 
 # This may sound a bit confusing but to understand it, you have to understand that there is 
 a # difference between a remote branch, and a branch that exists in a remote repository. 
